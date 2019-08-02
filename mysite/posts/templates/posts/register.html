@@ -1,0 +1,24 @@
+{% extends 'posts/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}inscription{% endblock title %}
+
+{% block content %}   
+<dir class="content-section" style="margin-right: 20%;margin-left:20%; margin-top:9%;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-5">
+                Rejoignez notre communauté mainténant
+            </legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Enregistrer</button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">Vous avez déjà un compte, Accédé à votre <a class="ml-2" href="#"> compte</a></small>
+    </div>
+</dir>
+
+{% endblock content %}
